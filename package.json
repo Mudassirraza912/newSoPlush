@@ -1,0 +1,49 @@
+{
+  "name": "SoPlushBeauty",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@react-native-community/google-signin": "^3.0.3",
+    "@react-native-community/netinfo": "^4.6.1",
+    "axios": "^0.19.0",
+    "moment": "^2.24.0",
+    "native-base": "^2.13.5",
+    "react": "16.8.6",
+    "react-native": "0.60.5",
+    "react-native-app-intro-slider": "^3.0.0",
+    "react-native-app-walkthrough": "^1.0.1",
+    "react-native-calendar": "^0.13.1",
+    "react-native-calendar-picker": "^6.0.1",
+    "react-native-calendars": "^1.212.0",
+    "react-native-confirmation-code-input": "^1.0.4",
+    "react-native-countdown-component": "^2.6.0",
+    "react-native-elements": "^1.1.0",
+    "react-native-fbsdk": "^1.1.1",
+    "react-native-gesture-handler": "^1.4.1",
+    "react-native-image-picker": "^1.1.0",
+    "react-native-linear-gradient": "^2.5.6",
+    "react-native-numeric-input": "^1.8.3",
+    "react-native-popup-dialog": "^0.18.3",
+    "react-native-reanimated": "^1.2.0",
+    "react-native-star-rating": "^1.1.0",
+    "react-navigation": "^3.12.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.5.5",
+    "@babel/runtime": "7.5.5",
+    "@react-native-community/eslint-config": "0.0.3",
+    "babel-jest": "24.9.0",
+    "eslint": "6.2.2",
+    "jest": "24.9.0",
+    "metro-react-native-babel-preset": "0.54.1",
+    "react-test-renderer": "16.8.6"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
