@@ -15,11 +15,19 @@
       },
       "oauth_client": [
         {
-          "client_id": "240404485205-65cldm162uep5a8upqof11dj76e8841d.apps.googleusercontent.com",
+          "client_id": "240404485205-740cepu1fqvkmf9tn929ovhg4vu927l4.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.soplushbeauty",
             "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "240404485205-t3kk1iotgok4ncbj91hg0kl14m3aqn71.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.soplushbeauty",
+            "certificate_hash": "d19c6c7afd96ec6a2fb42ab6dbc722de52f43626"
           }
         }
       ],
@@ -30,7 +38,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "240404485205-70t4nc6ok3jh03tu4dooro4nru85ec6i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
