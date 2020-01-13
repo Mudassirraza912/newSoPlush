@@ -123,7 +123,7 @@ export default class ConfirmBooking extends Component {
                                 // console.log("successData.data[0].role_id === 3", successData.data[0].role_id === 3)
                                 this.setState({loader: false})
                                 console.log("successData.data Add BOOKING", successData)
-                                Alert.alert("Alert","Booking Send Sucessfully")
+                                Alert.alert("Alert","Booking Send Successfully")
                                 this.props.navigation.navigate('UserHome')
 
                             } else {
