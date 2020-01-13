@@ -333,7 +333,17 @@ export default class ForgotPassword extends Component {
                                         </ListItem>
                                     </List> */}
 
-                    <View style={{ display: 'flex', flexDirection: 'row', width: '100%' }} >
+<View style={{ display: 'flex', flexDirection: 'row', width: '100%', paddingVertical:10 }} >
+                        <View style={{ width: '20%', alignItems: 'center', justifyContent: 'center', alignContent: 'center' }}>
+                            <Image source={require("../../../assets/envelope.png")} style={{ height: 25, width: 25 }} />
+                        </View>
+                        <Item floatingLabel style={{ width: '80%', borderBottomWidth: 0 }}>
+                            <Label style={{ marginLeft: 3, color: 'lightgray', bottom:10 }}>Email Address</Label>
+                            <Input placeholderTextColor="gray" value={this.state.email}  style={{ color: 'gray', width:'100%' }} onChangeText={(e) => { this.setState({ email: e }) }} />
+                        </Item>
+                    </View>
+
+                    {/* <View style={{ display: 'flex', flexDirection: 'row', width: '100%' }} >
                         <View style={{ width: '20%', alignItems: 'center', justifyContent: 'center', alignContent: 'center' }}>
                             <Image source={require("../../../assets/envelope.png")} style={{ height: 25, width: 25 }} />
                         </View>
@@ -341,7 +351,7 @@ export default class ForgotPassword extends Component {
                             <Label style={{ marginLeft: 3, color: 'lightgray' }}>Email Address</Label>
                             <Input placeholderTextColor="gray" value={this.state.email} placeholder="something@gmail.com" style={{ color: 'gray', width:'100%' }} onChangeText={(e) => { this.setState({ email: e }) }} />
                         </Item>
-                    </View>
+                    </View> */}
 
 
 

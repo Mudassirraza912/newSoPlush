@@ -433,7 +433,27 @@ export default class ProLogin extends Component {
 
 
 
-                                            <View style={{ display: 'flex', flexDirection: 'row', borderBottomColor: '#bdbdbd', borderBottomWidth: 0.5, width: '100%', paddingVertical: 1 }} >
+<View style={{ display: 'flex', flexDirection: 'row', borderBottomColor: '#bdbdbd', borderBottomWidth: 0.5, width: '100%', paddingVertical: 10 }} >
+                                                <View style={{ width: '20%', alignItems: 'center', justifyContent: 'center', alignContent: 'center' }}>
+                                                    <Image source={require("../../../assets/envelope1.png")} style={{ height: 15, width: 20 }} />
+                                                </View>
+                                                <Item floatingLabel style={{ width: '80%', borderBottomWidth: 0 }}>
+                                                    <Label style={{ marginLeft: 3, color: 'lightgray', fontSize: 15, bottom: 5 }}>Email Address</Label>
+                                                    <Input placeholderTextColor="gray"  value={this.state.email} style={{ color: 'gray', width: '100%', marginBottom: 5 }} onChangeText={(e) => {
+                                                        if (e.includes(' ')) {
+                                                           let text = e.replace(' ', '')
+                                                            this.setState({ email: text })
+                                                            // Alert.alert("Alert!", "Please don't type space in email")
+                                                        } else {
+                                                            this.setState({ email: e })
+                                                        }
+                                                    }} />
+                                                </Item>
+                                            </View>
+
+
+
+                                            {/* <View style={{ display: 'flex', flexDirection: 'row', borderBottomColor: '#bdbdbd', borderBottomWidth: 0.5, width: '100%', paddingVertical: 1 }} >
                                                 <View style={{ width: '20%', alignItems: 'center', justifyContent: 'center', alignContent: 'center' }}>
                                                     <Image source={require("../../../assets/envelope1.png")} style={{ height: 15, width: 20 }} />
                                                 </View>
@@ -449,10 +469,22 @@ export default class ProLogin extends Component {
                                                         }
                                                     }} />
                                                 </Item>
+                                            </View> */}
+
+
+
+<View style={{ display: 'flex', flexDirection: 'row', width: '100%', paddingVertical: 13 }} >
+                                                <View style={{ width: '20%', alignItems: 'center', justifyContent: 'center', alignContent: 'center' }}>
+                                                    <Image source={require("../../../assets/lockopen.png")} style={{ height: 20, width: 15 }} />
+                                                </View>
+                                                <Item floatingLabel style={{ width: '80%', borderBottomWidth: 0 }}>
+                                                    <Label style={{ marginLeft: 3, color: 'lightgray', fontSize: 15, bottom: 5 }}>Password</Label>
+                                                    <Input secureTextEntry value={this.state.password} style={{ color: 'gray', width: '100%', marginBottom: 5 }} onChangeText={(e) => { this.setState({ password: e }) }} />
+                                                </Item>
                                             </View>
 
 
-                                            <View style={{ display: 'flex', flexDirection: 'row', width: '100%', paddingVertical: 3 }} >
+                                            {/* <View style={{ display: 'flex', flexDirection: 'row', width: '100%', paddingVertical: 3 }} >
                                                 <View style={{ width: '20%', alignItems: 'center', justifyContent: 'center', alignContent: 'center' }}>
                                                     <Image source={require("../../../assets/lockopen.png")} style={{ height: 20, width: 15 }} />
                                                 </View>
@@ -460,7 +492,7 @@ export default class ProLogin extends Component {
                                                     <Label style={{ marginLeft: 3, color: 'lightgray', fontSize: 12, marginTop: 10 }}>Password</Label>
                                                     <Input secureTextEntry value={this.state.password} placeholder="*******" style={{ color: 'gray', width: '100%', marginBottom: 5 }} onChangeText={(e) => { this.setState({ password: e }) }} />
                                                 </Item>
-                                            </View>
+                                            </View> */}
 
 
                                         </View>

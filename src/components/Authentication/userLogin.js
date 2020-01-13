@@ -394,7 +394,7 @@ import {
 const { State: TextInputState } = TextInput;
 const { width, height } = Dimensions.get("window")
 
-
+import userSvg from '../../../assets/a.svg'
 
 
 
@@ -412,7 +412,7 @@ const { width, height } = Dimensions.get("window")
 //     iosClientId: '240404485205-70t4nc6ok3jh03tu4dooro4nru85ec6i.apps.googleusercontent.com', // [iOS] optional, if you want to specify the client ID of type iOS (otherwise, it is taken from GoogleService-Info.plist)
 //   });
 
-  
+
 
 GoogleSignin.configure({
     scopes: ['https://www.googleapis.com/auth/drive.readonly'], // what API you want to access on behalf of the user, default is email and profile
@@ -423,7 +423,7 @@ GoogleSignin.configure({
     forceConsentPrompt: true, // [Android] if you want to show the authorization prompt at each login.
     accountName: '', // [Android] specifies an account name on the device that should be used
     iosClientId: '240404485205-70t4nc6ok3jh03tu4dooro4nru85ec6i.apps.googleusercontent.com', // [iOS] optional, if you want to specify the client ID of type iOS (otherwise, it is taken from GoogleService-Info.plist)
-  });
+});
 
 
 
@@ -573,29 +573,29 @@ export default class UserLogin extends Component {
 
     initUser = (token) => {
         fetch(`https://graph.facebook.com/me?access_token=${token}&fields=email,id,about,picture,name,gender,friends`)
-        .then((response) => response.json())
-        .then((json) => {
-          // Some user object has been set up somewhere, build that user here
-          var user = {}
-          user.name = json.name
-          user.id = json.id
-          user.user_friends = json.friends
-          user.email = json.email
-          user.username = json.name
-          user.loading = false
-          user.loggedIn = true
-        //   user.avatar = setAvatar(json.id)      
-          console.log('user user user', user, json)
-        },
-        )
-        .catch((err) => {
-          console.log('ERROR GETTING DATA FROM FACEBOOK', err)
-        })
-      }
+            .then((response) => response.json())
+            .then((json) => {
+                // Some user object has been set up somewhere, build that user here
+                var user = {}
+                user.name = json.name
+                user.id = json.id
+                user.user_friends = json.friends
+                user.email = json.email
+                user.username = json.name
+                user.loading = false
+                user.loggedIn = true
+                //   user.avatar = setAvatar(json.id)      
+                console.log('user user user', user, json)
+            },
+            )
+            .catch((err) => {
+                console.log('ERROR GETTING DATA FROM FACEBOOK', err)
+            })
+    }
 
 
     fbLogin = () => {
-        
+
         LoginManager.logInWithPermissions(["public_profile"]).then((result) => {
             if (result.isCancelled) {
                 console.log("Login cancelled");
@@ -613,7 +613,7 @@ export default class UserLogin extends Component {
                     // Start the graph request.
                     new GraphRequestManager().addRequest(infoRequest).start();
 
-                      this.initUser(accessTokenData.accessToken)
+                    this.initUser(accessTokenData.accessToken)
                     console.log(accessTokenData.accessToken, 'access')
                 })
             }
@@ -681,14 +681,34 @@ export default class UserLogin extends Component {
                                                     <Left>
                                                         <Icon style={{ fontSize: 20, height: 50 }} active name='lock-outline' type="MaterialCommunityIcons" />
                                                     </Left>
-                                                    <Item floatingLabel style={{ marginLeft: "5%", borderBottomWidth: 0 }}>
+
+                                                    <Item floatingLabel style={{ marginLeft: "5%", borderBottomWidth: 0 , marginTop:-30}}>
                                                         <Label>Password</Label>
                                                         <Input value={this.state.password} onChangeText={(e) => { this.setState({ password: e }) }} secureTextEntry />
                                                     </Item>
                                                 </ListItem>
                                             </List> */}
 
-                                            <View style={{ display: 'flex', flexDirection: 'row', borderBottomColor: '#bdbdbd', borderBottomWidth: 0.5, width: '100%', paddingVertical: 1 }} >
+                                            <View style={{ display: 'flex', flexDirection: 'row', borderBottomColor: '#bdbdbd', borderBottomWidth: 0.5, width: '100%', paddingVertical: 10 }} >
+                                                <View style={{ width: '20%', alignItems: 'center', justifyContent: 'center', alignContent: 'center' }}>
+                                                    <Image source={require("../../../assets/envelope1.png")} style={{ height: 15, width: 20 }} />
+                                                    {/* <Image source={require('../../../assets/a.svg')} style={{ height: 20, width: 20 }}  /> */}
+                                                </View>
+                                                <Item floatingLabel style={{ width: '80%', borderBottomWidth: 0 }}>
+                                                    <Label style={{ marginLeft: 3, color: 'lightgray', fontSize: 15, bottom: 5 }}>Email Address</Label>
+                                                    <Input value={this.state.email} placeholderTextColor="gray" style={{ color: 'gray', width: '100%', marginBottom: 5 }} onChangeText={(e) => {
+                                                        if (e.includes(' ')) {
+                                                            let text = e.replace(" ", "")
+                                                            this.setState({ email: text })
+                                                            // Alert.alert("Alert!", "Please don't type space in email")
+                                                        } else {
+                                                            this.setState({ email: e })
+                                                        }
+                                                    }} />
+                                                </Item>
+                                            </View>
+
+                                            {/* <View style={{ display: 'flex', flexDirection: 'row', borderBottomColor: '#bdbdbd', borderBottomWidth: 0.5, width: '100%', paddingVertical: 1 }} >
                                                 <View style={{ width: '20%', alignItems: 'center', justifyContent: 'center', alignContent: 'center' }}>
                                                     <Image source={require("../../../assets/envelope1.png")} style={{ height: 15, width: 20 }} />
                                                 </View>
@@ -704,24 +724,38 @@ export default class UserLogin extends Component {
                                                         }
                                                      }} />
                                                 </Item>
+                                            </View> */}
+
+
+
+
+
+                                            <View style={{ display: 'flex', flexDirection: 'row', width: '100%', paddingVertical: 12 }} >
+                                                <View style={{ width: '20%', alignItems: 'center', justifyContent: 'center', alignContent: 'center' }}>
+                                                    <Image source={require("../../../assets/lockopen.png")} style={{ height: 20, width: 15 }} />
+                                                </View>
+                                                <Item floatingLabel style={{ width: '80%', borderBottomWidth: 0 }}>
+                                                    <Label style={{ marginLeft: 3, color: 'lightgray', fontSize: 15, bottom: 5}}>Password</Label>
+                                                    <Input secureTextEntry value={this.state.password} placeholder="*******" style={{ color: 'gray', width: '100%', marginBottom: 5 }} onChangeText={(e) => { this.setState({ password: e }) }} />
+                                                </Item>
                                             </View>
 
 
-                                            <View style={{ display: 'flex', flexDirection: 'row', width: '100%', paddingVertical: 3 }} >
+                                            {/* <View style={{ display: 'flex', flexDirection: 'row', width: '100%', paddingVertical: 3 }} >
                                                 <View style={{ width: '20%', alignItems: 'center', justifyContent: 'center', alignContent: 'center' }}>
                                                     <Image source={require("../../../assets/lockopen.png")} style={{ height: 20, width: 15 }} />
                                                 </View>
                                                 <Item stackedLabel style={{ width: '80%', borderBottomWidth: 0 }}>
                                                     <Label style={{ marginLeft: 3, color: 'lightgray', fontSize: 12, marginTop: 10 }}>Password</Label>
-                                                    <Input secureTextEntry value={this.state.password} placeholder="*******"  style={{ color: 'gray', width: '100%', marginBottom: 5 }} onChangeText={(e) => { this.setState({ password: e }) }} />
+                                                    <Input secureTextEntry value={this.state.password} placeholder="*******" style={{ color: 'gray', width: '100%', marginBottom: 5 }} onChangeText={(e) => { this.setState({ password: e }) }} />
                                                 </Item>
-                                            </View>
+                                            </View> */}
 
                                         </View>
 
                                     </View>
 
-                                    <View style={{ alignContent: "center", alignItems: "center", marginTop: "5%", paddingVertical: 10}}>
+                                    <View style={{ alignContent: "center", alignItems: "center", marginTop: "5%", paddingVertical: 10 }}>
                                         <TouchableOpacity onPress={() => { this.props.navigation.navigate("ForgotPassword", { from: "UserLogin" }) }}>
                                             <Text style={{ fontFamily: 'Poppins-Regular_0', opacity: 0.6 }}>Forgot Password?</Text>
                                         </TouchableOpacity>
@@ -738,7 +772,7 @@ export default class UserLogin extends Component {
 
                                         <LinearGradient start={{ x: 0.0, y: 0.25 }} end={{ x: 0.0, y: 1.0 }} colors={['#F9B1B0', '#FD8788', '#FF7173']} style={{ width: "95%", borderRadius: 5 }}>
                                             <TouchableOpacity onPress={this.login} style={{ justifyContent: "center", alignContent: "center", alignItems: "center", backgroundColor: "none", opacity: 0.7, borderRadius: 10 }} style={{ flexDirection: "column", justifyContent: "center", alignContent: "center", alignItems: "center", backgroundColor: "transparent", opacity: 0.7, borderRadius: 10 }}>
-                                                <Text style={{ alignSelf: "center", textAlignVertical: "center", color: "#fff", fontFamily: "Poppins-Regular_0", paddingVertical: 15, fontWeight:'bold' }}>
+                                                <Text style={{ alignSelf: "center", textAlignVertical: "center", color: "#fff", fontFamily: "Poppins-Regular_0", paddingVertical: 15, fontWeight: 'bold' }}>
                                                     LOGIN
                     </Text>
                                             </TouchableOpacity>
@@ -766,9 +800,12 @@ export default class UserLogin extends Component {
 </LinearGradient> */}
 
                                         <LinearGradient start={{ x: 0.0, y: 0.25 }} end={{ x: 0.0, y: 1.0 }} colors={['#c79de0', '#883cb6', '#883cb6']} style={{ width: "48%", borderRadius: 5 }}>
-                                            <TouchableOpacity onPress={this.fbLogin} style={{ justifyContent: "center", alignContent: "center", alignItems: "center", backgroundColor: "none", opacity: 0.7, borderRadius: 10 }} style={{ justifyContent: "center", alignContent: "center", alignItems: "center", backgroundColor: "transparent", opacity: 0.7, borderRadius: 10, flexDirection: 'row' }}>
+                                            <TouchableOpacity 
+                                            // onPress={this.fbLogin}
+                                            onPress={() => Alert.alert("Alert", "Will be implemented")}
+                                            style={{ justifyContent: "center", alignContent: "center", alignItems: "center", backgroundColor: "none", opacity: 0.7, borderRadius: 10 }} style={{ justifyContent: "center", alignContent: "center", alignItems: "center", backgroundColor: "transparent", opacity: 0.7, borderRadius: 10, flexDirection: 'row' }}>
                                                 <Icon style={{ color: "#fff" }} name="instagram" type="MaterialCommunityIcons" />
-                                                <Text style={{ alignSelf: "center", textAlignVertical: "center", color: "#fff", fontFamily: "Poppins-Regular_0", paddingVertical: 10, paddingHorizontal: 5 , fontWeight:'bold'}}>
+                                                <Text style={{ alignSelf: "center", textAlignVertical: "center", color: "#fff", fontFamily: "Poppins-Regular_0", paddingVertical: 10, paddingHorizontal: 5, fontWeight: 'bold' }}>
                                                     Instagram
 </Text>
                                             </TouchableOpacity>
@@ -788,18 +825,18 @@ export default class UserLogin extends Component {
 
                                         <LinearGradient start={{ x: 0.0, y: 0.25 }} end={{ x: 0.0, y: 1.0 }} colors={['#F9B1B0', '#FD8788', '#FF7173']} style={{ width: "48%", borderRadius: 5 }}>
                                             <TouchableOpacity onPress={() => {
-                                                // Alert.alert("Alert", "Will be implemented")
-                                                this.signIn()
+                                                Alert.alert("Alert", "Will be implemented")
+                                                // this.signIn()
                                             }} style={{ justifyContent: "center", alignContent: "center", alignItems: "center", backgroundColor: "none", opacity: 0.7, borderRadius: 10 }} style={{ justifyContent: "center", alignContent: "center", alignItems: "center", backgroundColor: "transparent", opacity: 0.7, borderRadius: 10, flexDirection: 'row' }}>
                                                 <Icon style={{ color: "#fff" }} name="google" type="FontAwesome" />
-                                                <Text style={{ alignSelf: "center", textAlignVertical: "center", color: "#fff", fontFamily: "Poppins-Regular_0", paddingVertical: 10, paddingHorizontal: 5, fontWeight:'bold' }}>
+                                                <Text style={{ alignSelf: "center", textAlignVertical: "center", color: "#fff", fontFamily: "Poppins-Regular_0", paddingVertical: 10, paddingHorizontal: 5, fontWeight: 'bold' }}>
                                                     Gmail
 </Text>
                                             </TouchableOpacity>
                                         </LinearGradient>
                                     </View>
 
-                                    <View style={{ display: "flex", flexDirection: "row", alignContent: "center", alignItems: "center", marginTop: "5%", justifyContent: "center", paddingVertical: 10  }}>
+                                    <View style={{ display: "flex", flexDirection: "row", alignContent: "center", alignItems: "center", marginTop: "5%", justifyContent: "center", paddingVertical: 10 }}>
 
                                         <Text style={{ alignSelf: "center", fontFamily: "Poppins-Regular_0", opacity: 0.6 }}>
                                             New to Soplush Beauty?
