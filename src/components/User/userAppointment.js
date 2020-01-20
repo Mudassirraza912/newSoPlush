@@ -339,6 +339,7 @@ componentDidMount() {
                           }}
                         />
                         <Picker
+                          mode="dropdown"
                           selectedValue={this.state.language}
                           style={{ width: '100%', borderBottomColor: "#fc8b8c", borderBottomWidth: 1, backgroundColor: 'transparent', color: '#FE7678' }}
                           itemStyle={{ backgroundColor: "grey", color: "blue", fontSize: 15, borderBottomColor: "#fc8b8c", borderBottomWidth: 1 }}

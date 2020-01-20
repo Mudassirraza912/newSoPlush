@@ -191,7 +191,10 @@ export default class SelectedProfile extends Component {
 
                                         <View style={{ display: "flex", flexDirection: "column", marginTop: 15, marginLeft: 10 , padding: 5}}>
                                             <Text style={{ width: "30%", fontFamily: "Poppins-Regular_0", fontSize: 15, color: "gray" }}>Select Date</Text>
+                                           
+                                            <View style={{right:10}}>
                                             <DatePicker
+                                                style={{marginRight: 40}}
                                                 // date={this.state.date} //initial date from state
                                                 defaultDate={new Date()}
                                                 // defaultDate={"1/23/3"}
@@ -202,12 +205,13 @@ export default class SelectedProfile extends Component {
                                                 maxDate="01-01-2050"
                                                 confirmBtnText="Confirm"
                                                 cancelBtnText="Cancel"
+                                                
                                                 customStyles={{
                                                     dateIcon: {
                                                         position: 'absolute',
                                                         left: 0,
                                                         top: 4,
-                                                        marginLeft: 0
+                                                        marginLeft: 0,
                                                     },
                                                     dateInput: {
                                                         marginLeft: 36
@@ -222,6 +226,7 @@ export default class SelectedProfile extends Component {
 
                                                 }}
                                                 underlineColorAndroid="#f55f2a" />
+                                            </View>
                                             {/* <Text style={{fontFamily:"Poppins-Regular_0", fontSize:15}}>
                                     {this.state.profileData.birthdate}</Text> */}
                                             <Divider style={{ backgroundColor: 'lightgray', width:"95%" }} />

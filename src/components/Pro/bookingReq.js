@@ -532,7 +532,7 @@ export default class BookingReq extends Component {
                                                     <Text style={{ marginLeft: "3%", fontFamily: "Poppins-Regular_0", fontSize:15 }}>{newdate}</Text>
                                                 </View>
 
-                                                <View style={{ display: "flex", flexDirection: "row", marginRight: "6%", width:'100%' }}>
+                                                <View style={{ display: "flex", flexDirection: "row", marginRight: "6%", width:'100%', justifyContent:'space-between' }}>
 
                                                     {/* <View style={{ alignContent: "center", alignItems: "center", marginTop: "5%" }}>
                                                         <Button onPress={() => { this.changeStatus('accepted', value, index) }} style={{ justifyContent: "center", alignContent: "center", alignItems: "center", backgroundColor: "#fc8b8c", width: "90%", borderRadius: 10, opacity: 0.7 }}>
@@ -551,7 +551,7 @@ export default class BookingReq extends Component {
                                                 </Button>
                                             </LinearGradient> */}
 
-<LinearGradient start={{ x: 0.0, y: 0.25 }} end={{ x: 0.0, y: 1.0 }} colors={['#F9B1B0', '#FD8788', '#FF7173']} style={{ width: "90%", borderRadius: 5}}>
+<LinearGradient start={{ x: 0.0, y: 0.25 }} end={{ x: 0.0, y: 1.0 }} colors={['#F9B1B0', '#FD8788', '#FF7173']} style={{ width: "95%", borderRadius: 5}}>
                                         <TouchableOpacity onPress={() => { this.changeStatus('accepted', value, index) }}  style={{ justifyContent: "center", alignContent: "center", alignItems: "center", backgroundColor: "none", opacity: 0.7, borderRadius: 5 }} style={{ flexDirection: "column", justifyContent: "center", alignContent: "center", alignItems: "center", backgroundColor: "transparent", opacity: 0.7, borderRadius: 5 }}>
                                             <Text style={{ alignSelf: "center", textAlignVertical: "center", color: "#fff", fontFamily: "Poppins-Regular_0", fontSize: 17, paddingVertical: 10, fontWeight:'bold' }}>
                                             ACCEPT
@@ -561,8 +561,8 @@ export default class BookingReq extends Component {
                                         </View>
                                                     
 
-                                                    <View style={{flex: 1 ,alignContent: "center", alignItems: "center", marginTop: "5%" }}>
-                                                        <TouchableOpacity onPress={() => { this.changeStatus('rejected', value, index) }} style={{ justifyContent: "center", alignContent: "center", alignItems: "center", backgroundColor: "#fff", width: "90%", borderRadius: 5, opacity: 0.7, borderColor: "#fc8b8c", borderWidth: 1 }}>
+                                                    <View style={{flex: 1 ,alignContent: "center", alignItems: "center", marginTop: "5%", width: '50%', marginLeft: 15  }}>
+                                                        <TouchableOpacity onPress={() => { this.changeStatus('rejected', value, index) }} style={{ justifyContent: "center", alignContent: "center", alignItems: "center", backgroundColor: "#fff", width: "100%", borderRadius: 5, opacity: 0.7, borderColor: "#fc8b8c", borderWidth: 1 }}>
                                                             <Text style={{ alignSelf: "center", color: "#000", fontFamily: "Poppins-Regular_0", fontSize: 17 , paddingVertical: 10}}>
                                                                 REJECT
                                             </Text>

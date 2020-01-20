@@ -91,9 +91,22 @@ export default class ForgotPassword extends Component {
         // this.setState({renderEMail: false, renderCode: true, renderPassword:false, startDate: moment(), endDate:moment().add(1.5, "M")})
 
         if (reg.test(email) === false) {
-
-            Alert.alert("Alert","Please Enter Valid Email Address")
-            this.setState({ loader: false })
+            this.setState({ loader: true })
+            Alert.alert(
+                'Alert',
+                'Are you sure you want to exit?',
+                [
+                    {
+                        text: 'OK',
+                        onPress: () => {this.setState({ loader: false }) }
+                    }
+                ],
+                {
+                    cancelable: false
+                }
+            );
+            // Alert.alert("Alert","Please Enter Valid Email Address")
+            // this.setState({ loader: false })
 
         } else {
 

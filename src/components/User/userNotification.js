@@ -98,12 +98,12 @@ export default class UserNotification extends Component {
           leftAvatar={{
             source: item.icon &&  item.icon ,
             titleStyle:{fontFamily:"Poppins-Regular_0"},
-            title: item.data[0],
+            // title: item.data[0],
             rounded:false,
             size:'large',
-            containerStyle:{borderRadius: 10, backgroundColor:"transparent"},
-            iconStyle:{borderRadius: 20}, 
-            avatarStyle:{borderRadius: 10, backgroundColor:"transparent"}, 
+            containerStyle:{borderRadius: 10, backgroundColor:"transparent", overflow:'hidden'},
+            iconStyle:{borderRadius: 20, overflow:'hidden'}, 
+            avatarStyle:{borderRadius: 10, backgroundColor:"transparent", overflow:'hidden'}, 
           }}
           
         />

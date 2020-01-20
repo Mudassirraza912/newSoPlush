@@ -294,7 +294,7 @@ export default class EditUserProfile extends Component {
                     <Image source={phone} style={{ height: 20, width: 20 }}/>
                     </View>
                         {/* <Label>Phone Number</Label> */}
-                        <Input style={{fontSize:15}} defaultValue={this.state.phoneNo} onChangeText={(e) => {this.setState({phoneNo:e})}} placeholder="Phone Number" />
+                        <Input keyboardType="phone-pad" style={{fontSize:15}} defaultValue={this.state.phoneNo} onChangeText={(e) => {this.setState({phoneNo:e})}} placeholder="Phone Number" />
                     </Item>
                     {/* <Item >
                     <Image source={user} style={{ height: 22, width: 22 }} />

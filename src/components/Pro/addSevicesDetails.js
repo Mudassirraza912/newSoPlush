@@ -184,56 +184,57 @@ export default class AddServiceDetails extends Component {
                                 </TouchableOpacity>} */}
 
 
-                                <View style={{ width: "80%", alignContent: "center", alignItems: "center", justifyContent: "center", alignSelf: 'center' }}>
+<View style={{ width: "80%", alignContent: "center", alignItems: "center", justifyContent: "center", alignSelf: 'center' }}>
 
-                                    <Item stackedLabel style={{ width: '100%', borderBottomWidth: 1, borderBottomColor: '#bdbdbd' }}>
-                                        <Label style={{ marginLeft: 3, color: 'gray', fontSize: 12, marginTop: 10 }}>Enter Service</Label>
-                                        <Input value={this.state.email} style={{ color: 'gray', width: '100%', marginBottom: 5 }} onChangeText={(e) => { this.setState({ name: e }) }} placeholder="Enter Service" />
-                                    </Item>
-
-
+<Item stackedLabel style={{ width: '100%', borderBottomWidth: 1, borderBottomColor: '#bdbdbd' }}>
+    <Label style={{ marginLeft: 3, color: 'gray', fontSize: 12, marginTop: 10 }}>Enter Service</Label>
+    <Input value={this.state.email} style={{ color: 'gray', width: '100%', marginBottom: 5 }} onChangeText={(e) => { this.setState({ name: e }) }} placeholder="Enter Service" />
+</Item>
 
 
-                                    <Item stackedLabel style={{ width: '100%', borderBottomWidth: 1, borderBottomColor: '#bdbdbd' }}>
-                                        <Label style={{ marginLeft: 3, color: 'gray', fontSize: 12, marginTop: 10 }}>Enter Cost</Label>
-                                        <Input value={this.state.email} style={{ color: 'gray', width: '100%', marginBottom: 5 }} onChangeText={(e) => { this.setState({ cost: e }) }} placeholder="Enter Cost" keyboardType="number-pad" />
-                                    </Item>
-                                    <View>
-                                        <Picker
-                                            selectedValue={this.state.selectedCategory}
-                                            style={{ height: 50, width: 280 }}
-                                            onValueChange={(itemValue, itemIndex) =>
-                                                this.setState({ selectedCategory: itemValue })
-                                            }>
-                                            {this.state.category.map((value, index) => {
-                                                console.log("value.category_name", value.category_name)
-                                                return (<Picker.Item style={{ width: 200 }} label={value.category_name} value={value.category_id} />)
-                                            })}
-                                        </Picker>
-                                    </View>
 
 
-                                    {/* 
-                                            <Button onPress={this.addCategory} style={{justifyContent:"center",alignContent:"center", alignItems:"center", backgroundColor:"#fc8b8c", width:"100%", borderRadius: 10, opacity:0.7, marginTop:"5%"}}> 
-                                            <Text style={{alignSelf:"center",color:"#fff", fontFamily:"Poppins-Regular_0", fontSize:20}}>
-                                            Ok
-                                            </Text>   
-                                            </Button> */}
+<Item stackedLabel style={{ width: '100%', borderBottomWidth: 1, borderBottomColor: '#bdbdbd' }}>
+    <Label style={{ marginLeft: 3, color: 'gray', fontSize: 12, marginTop: 10 }}>Enter Cost</Label>
+    <Input value={this.state.email} style={{ color: 'gray', width: '100%', marginBottom: 5 }} onChangeText={(e) => { this.setState({ cost: e }) }} placeholder="Enter Cost" keyboardType="number-pad" />
+</Item>
+<View>
+    <Picker
+        mode="dropdown"
+        selectedValue={this.state.selectedCategory}
+        style={{ height: 50, width: 280 }}
+        onValueChange={(itemValue, itemIndex) =>
+            this.setState({ selectedCategory: itemValue })
+        }>
+        {this.state.category.map((value, index) => {
+            console.log("value.category_name", value.category_name)
+            return (<Picker.Item style={{ width: 200 }} label={value.category_name} value={value.category_id} />)
+        })}
+    </Picker>
+</View>
 
 
-                                    {!this.state.loader ? <View style={{ alignContent: "center", alignItems: "center", marginTop: "5%", marginBottom: 10, width: "100%" }}>
+{/* 
+        <Button onPress={this.addCategory} style={{justifyContent:"center",alignContent:"center", alignItems:"center", backgroundColor:"#fc8b8c", width:"100%", borderRadius: 10, opacity:0.7, marginTop:"5%"}}> 
+        <Text style={{alignSelf:"center",color:"#fff", fontFamily:"Poppins-Regular_0", fontSize:20}}>
+        Ok
+        </Text>   
+        </Button> */}
 
 
-                                        <LinearGradient start={{ x: 0.0, y: 0.25 }} end={{ x: 0.0, y: 1.0 }} colors={['#F9B1B0', '#FD8788', '#FF7173']} style={{ width: "90%", borderRadius: 10 }}>
-                                            <TouchableOpacity onPress={this.addCategory} style={{ justifyContent: "center", alignContent: "center", alignItems: "center", backgroundColor: "none", opacity: 0.7, borderRadius: 10 }} style={{ flexDirection: "column", justifyContent: "center", alignContent: "center", alignItems: "center", backgroundColor: "transparent", opacity: 0.7, borderRadius: 10, width: '100%' }}>
-                                                <Text style={{ alignSelf: "center", textAlignVertical: "center", color: "#fff", fontFamily: "Poppins-Regular_0", paddingVertical: 15, fontWeight:'bold' }}>
-                                                    OK
-                    </Text>
-                                            </TouchableOpacity>
-                                        </LinearGradient>
-                                    </View> : <Spinner color="#fc8b8c" />}
+{!this.state.loader ? <View style={{ alignContent: "center", alignItems: "center", marginTop: "5%", marginBottom: 10, width: "100%" }}>
 
-                                </View>
+
+    <LinearGradient start={{ x: 0.0, y: 0.25 }} end={{ x: 0.0, y: 1.0 }} colors={['#F9B1B0', '#FD8788', '#FF7173']} style={{ width: "90%", borderRadius: 10 }}>
+        <TouchableOpacity onPress={this.addCategory} style={{ justifyContent: "center", alignContent: "center", alignItems: "center", backgroundColor: "none", opacity: 0.7, borderRadius: 10 }} style={{ flexDirection: "column", justifyContent: "center", alignContent: "center", alignItems: "center", backgroundColor: "transparent", opacity: 0.7, borderRadius: 10, width: '100%' }}>
+            <Text style={{ alignSelf: "center", textAlignVertical: "center", color: "#fff", fontFamily: "Poppins-Regular_0", paddingVertical: 15, fontWeight:'bold' }}>
+                OK
+</Text>
+        </TouchableOpacity>
+    </LinearGradient>
+</View> : <Spinner color="#fc8b8c" />}
+
+</View>
 
                             </View>
 

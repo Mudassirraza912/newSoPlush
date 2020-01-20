@@ -224,6 +224,7 @@ export default class ConfirmBooking extends Component {
                                                                     // value={this.state.value} 
                                                                     value={Number(value.quantity)}
                                                                     // initValue={1}
+                                                                    editable={false}
                                                                     minValue={1}
                                                                     containerStyle={{ borderColor: "pink" }}
                                                                     onChange={(e) => this.addQuantity(e, value.quantity, index)}

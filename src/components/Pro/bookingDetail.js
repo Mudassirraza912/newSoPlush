@@ -71,8 +71,9 @@ export default class BookingDetail extends Component {
                             <View style={{ backgroundColor: "#fff", borderRadius: 10, width: "90%" }}>
 
                                 <View style={{ borderColor: "none", borderWidth: 0, borderRadius: 10, marginLeft: 10, paddingVertical: 20 }}>
+
                                     <View style={{ display: "flex", flexDirection: "row" }}>
-                                        <Text style={{ width: "50%", fontFamily: "Poppins-Regular_0", color: '#aaaaaa' }}>Name</Text>
+                                        <Text style={{ width: "30%", fontFamily: "Poppins-Regular_0", color: '#aaaaaa' }}>Name</Text>
                                         <Text style={{ marginLeft: "4%", fontFamily: "Poppins-Regular_0" }}>{varservices.username}</Text>
                                         {/* <TouchableOpacity>
                                     <Text  style={{marginLeft:"30%", color:"#fc8b8c", borderBottomColor:"#fc8b8c", borderBottomWidth:1, fontFamily:"Poppins-Regular_0", width:50}}>VIEW DETAILS</Text>
@@ -80,15 +81,18 @@ export default class BookingDetail extends Component {
                                     </View>
 
                                     <View style={{ display: "flex", flexDirection: "row" }}>
-                                        <Text style={{ width: "50%", fontFamily: "Poppins-Regular_0", color: '#aaaaaa' }}>Service</Text>
+                                        <Text style={{ width: "30%", fontFamily: "Poppins-Regular_0", color: '#aaaaaa' }}>Service</Text>
                                         <View>
-                                        <Text style={{ marginLeft: "4%", fontFamily: "Poppins-Regular_0" }}>  {varservices.service_name}</Text>
+                                        <Text style={{marginLeft: "4%", fontFamily: "Poppins-Regular_0", textAlign:'center' }}> {varservices.service_name}</Text>
                                         </View>
                                     </View>
 
                                     <View style={{ display: "flex", flexDirection: "row" }}>
-                                        <Text style={{ width: "50%", fontFamily: "Poppins-Regular_0", color: '#aaaaaa' }}>Time</Text>
-                                        <Text style={{ marginLeft: "4%", fontFamily: "Poppins-Regular_0" }}>{varservices.time_slot}</Text>
+                                        <Text style={{ width: "30%", fontFamily: "Poppins-Regular_0", color: '#aaaaaa' }}>Time</Text>
+                                        <Text style={{ marginLeft: "4%", fontFamily: "Poppins-Regular_0" }}>{varservices.time_slot}
+                                        </Text>
+                                        {/* <Text style={{ marginLeft: "4%", fontFamily: "Poppins-Regular_0" }}>John Micheacl
+                                        </Text> */}
                                     </View>
                                     {/* 
                                 <View style={{display:"flex", flexDirection:"row"}}> 
@@ -97,18 +101,18 @@ export default class BookingDetail extends Component {
                                 </View> */}
 
                                     <View style={{ display: "flex", flexDirection: "row" }}>
-                                        <Text style={{ width: "50%", fontFamily: "Poppins-Regular_0", color: '#aaaaaa' }}>Date</Text>
+                                        <Text style={{ width: "30%", fontFamily: "Poppins-Regular_0", color: '#aaaaaa' }}>Date</Text>
                                         <Text style={{ marginLeft: "4%", fontFamily: "Poppins-Regular_0" }}>{varservices.service_date}</Text>
                                     </View>
 
                                     <View style={{ display: "flex", flexDirection: "row", overflow: "hidden" }}>
-                                        <Text style={{ width: "50%", fontFamily: "Poppins-Regular_0", color: '#aaaaaa' }}>Mobile </Text>
+                                        <Text style={{ width: "30%", fontFamily: "Poppins-Regular_0", color: '#aaaaaa' }}>Mobile </Text>
                                         <Text style={{ marginLeft: "4%", fontFamily: "Poppins-Regular_0", width: "60%" }}>{varservices.customer_phone_number}</Text>
                                     </View>
 
 
                                     <View style={{ display: "flex", flexDirection: "row" }}>
-                                        <Text style={{ width: "50%", fontFamily: "Poppins-Regular_0", color: '#aaaaaa' }}>Address</Text>
+                                        <Text style={{ width: "30%", fontFamily: "Poppins-Regular_0", color: '#aaaaaa' }}>Address</Text>
                                         <Text style={{ marginLeft: "4%", fontFamily: "Poppins-Regular_0" }}>{varservices.address}</Text>
                                     </View>
 

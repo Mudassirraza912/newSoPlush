@@ -319,7 +319,7 @@ export default class EditProProfile extends Component {
                     <Image source={phone} style={{ height: 20, width: 20 }} />
                     </View>
                         {/* <Label>Phone Number</Label> */}
-                        <Input style={{fontSize:15}} defaultValue={this.state.phoneNo} onChangeText={(e) => {this.setState({phoneNo:e})}} placeholder="Phone Number" />
+                        <Input  keyboardType="phone-pad"  style={{fontSize:15}} defaultValue={this.state.phoneNo} onChangeText={(e) => {this.setState({phoneNo:e})}} placeholder="Phone Number" />
                     </Item>
                     <Item >
                     <View style={{ width: 30}}>
