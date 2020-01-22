@@ -112,10 +112,14 @@ export default class PersonalService extends Component {
   }
 
   handleBackButton = () => {
-    console.log('RUNNNING');
-    filterSoplush = null;
-    filterplush = null;
-    this.props.navigation.state.params = {};
+    // console.log('this.props.navigation.', this.props.navigation,"this.props.navigation.isFocused()", this.props.navigation.isFocused() )
+    if(this.props.navigation.isFocused()) {
+      // console.log('RUNNNING');
+      filterSoplush = null;
+      filterplush = null;
+      this.props.navigation.state.params = {};
+    }
+    
   };
 
   // componentDidMount() {
@@ -335,9 +339,9 @@ export default class PersonalService extends Component {
             service: this.props.navigation.getParam('service'),
             category_name: this.props.navigation.getParam('category_name')
             });
-            filterSoplush = null;
-            filterplush = null;
-            this.props.navigation.state.params = {};
+            // filterSoplush = null;
+            // filterplush = null;
+            // this.props.navigation.state.params = {};
           } else {
             console.log('Else', successData);
             Alert.alert('Alert', successData.message);
@@ -385,24 +389,22 @@ export default class PersonalService extends Component {
   };
 
   render() {
+    console.log("RENDER RENDER RENDER RENDER")
     // console.log("WORK",this.state.cart, this.state.selectDate)
+    // console.log('CART', filterplush, filterSoplush, img, this.props.navigation.getParam('service'));
     var img = this.props.navigation.getParam('image');
     soplushData = this.props.navigation.getParam('service');
     plushData = this.props.navigation.getParam('service');
     category_name = this.props.navigation.getParam('category_name');
-    if (filterSoplush == null) {
+
+    if(this.props.navigation.getParam('service') !== undefined) {      
+        if (filterSoplush == null) {
       filterSoplush = this.props.navigation.getParam('service');
       filterplush = this.props.navigation.getParam('service');
     }
+  }
 
-    console.log('CART', filterplush, filterSoplush, img, this.props.navigation.getParam('service'));
-
-    // if(this.state.plushData.length < 1) {
-    //         this.setState({
-    //                 plushData: data,
-    //                 soplushData: data
-    //         })
-    // }
+  
     return (
       <View style={{ flex: 1, height: '100%', width: '100%', marginTop: -80 }}>
         <ImageBackground
