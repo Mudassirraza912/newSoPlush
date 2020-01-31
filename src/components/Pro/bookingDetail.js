@@ -83,7 +83,7 @@ export default class BookingDetail extends Component {
                                     <View style={{ display: "flex", flexDirection: "row" }}>
                                         <Text style={{ width: "30%", fontFamily: "Poppins-Regular_0", color: '#aaaaaa' }}>Service</Text>
                                         <View>
-                                        <Text style={{marginLeft: "4%", fontFamily: "Poppins-Regular_0", textAlign:'center' }}> {varservices.service_name}</Text>
+                                        <Text style={{marginLeft: "5%", fontFamily: "Poppins-Regular_0", textAlign:'center' }}> {varservices.service_name}</Text>
                                         </View>
                                     </View>
 

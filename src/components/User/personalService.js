@@ -440,6 +440,7 @@ export default class PersonalService extends Component {
                       fontSize: 20,
                       fontFamily: 'Poppins-Regular_0',
                       textTransform: 'uppercase',
+                      textAlign:'center'
                     }}>
                     {category_name} Services
                     {/* Personal Services */}

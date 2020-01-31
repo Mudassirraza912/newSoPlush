@@ -159,9 +159,9 @@ componentDidMount() {
 
         <View style={{ flex: 1, width: '100%', backgroundColor: "rgba(246, 232, 232, 0.7)", justifyContent: "center" }}>
 
-          <ScrollView style={{  }}>
+          <ScrollView>
 
-            <View style={{ flex: 1, justifyContent: "center", alignContent: "center", alignItems: "center", marginTop: 20 }}>
+            <View style={{justifyContent: "center", alignContent: "center", alignItems: "center", marginTop: 20 }}>
 
 
               <Card containerStyle={{ backgroundColor: "#fff", borderRadius: 10, width: "95%", overflow: 'hidden' }}>
@@ -367,11 +367,11 @@ componentDidMount() {
             <View>
               <Text></Text>
               <Text></Text>
+              {/* <Text></Text>
               <Text></Text>
               <Text></Text>
               <Text></Text>
-              <Text></Text>
-              <Text></Text>
+              <Text></Text> */}
             </View>
 
 

@@ -285,80 +285,163 @@ export default class BookingHistory extends Component {
 
                 {/* <View style={{backgroundColor:"#fff", width:"80%",justifyContent:"center", alignContent:"center", alignSelf:"center",borderRadius:10, shadowOpacity: 1, elevation: 4, shadowRadius: 20, shadowOffset: { width: 0, height: 13 }, shadowColor: 'rgba(46, 229, 157, 0.4)', marginTop: '10%', marginBottom:'5%'}}> */}
                    
-                   <View style={{flexL:1 ,justifyContent:"center", alignContent:"center", alignItems:"center", marginTop:20, borderRadius:20}}>
+                   <View style={{flex:1 ,justifyContent:"center", alignContent:"center", alignItems:"center", marginTop:20, borderRadius:20}}>
 
-                <View style={{backgroundColor:"#fff",borderRadius:20, width:"90%"}}>
+                <View style={{flex: 1 , backgroundColor:"#fff",borderRadius:20, width:"90%"}}>
 
-                {this.state.data.length > 0 ?       <View style={{ backgroundColor: "#fff", width: "100%", borderRadius:20, overflow:'hidden'}}> 
+                {this.state.data.length > 0 ?       <View style={{ backgroundColor: "#fff", width: "100%", borderRadius:20}}> 
                     {this.state.data.map((value, index) => {
-                        console.log("DAY NAME DAY NAME", )
+                        var index = index + 1
+                        var dataLength = this.state.data.length
+                        console.log("DAY NAME DAY NAME",index , dataLength)
                         var formatDate = `${moment(value.service_date).format('dddd')} - ${ moment(value.service_date).format('DD/MM/YYYY')}`
-                        // console.log("DAY NAME DAY NAME", `${formatDate, moment(value.service_date).format('MMMM')} ${formatDate, moment(value.service_date).format('YYYY') }`  )
+                    
+                        if( index === 1){
 
-                        return(
-                        <View key={index} style={{backgroundColor:'#fff', padding: 10}}> 
+                            return(
+                                <View key={index} style={{backgroundColor:'#fff', padding: 10, borderTopLeftRadius: 20, borderTopRightRadius: 20}}> 
+        
+                                   <View style={{display:"flex", flexDirection:"row", paddingVertical:"5%", justifyContent:'space-between'}}> 
+                                            <Text style={{fontFamily:"Poppins-Regular_0", color:"#ff8385", fontSize:17}}>{formatDate}</Text>
+                                        </View>
+        
+        
+        
+        
+                                        <View style={{ display: "flex", flexDirection: "row" , justifyContent:'space-between'}}>
+                                                            <Text style={{ width: "50%", fontFamily: "Poppins-Regular_0", color: '#bdbdbd' }}>Service Name</Text>
+                                                            <Text style={{ marginLeft: "5%", fontFamily: "Poppins-Regular_0", fontSize:15  }}>{value.service_name}</Text>
+                                            </View>
+        
+        
+                                      
+        
+        
+        {value.s_checked  == 1 ? 
+                                         <View style={{display:"flex", flexDirection:"row"}}> 
+                                            <Text style={{width:"50%", fontFamily:"Poppins-Regular_0", color:'#aaaaaa' }}>Cost</Text>
+                                            <Text style={{width:"50%",  fontFamily:"Poppins-Regular_0", textAlign: 'right'}}>${value.soplush_cost}</Text>
+                                        </View>  
+                                        
+                                    :
+                                    <View style={{display:"flex", flexDirection:"row"}}> 
+                                    <Text style={{width:"50%", fontFamily:"Poppins-Regular_0", color:'#aaaaaa' }}>Cost</Text>
+                                    <Text style={{width:"50%",  fontFamily:"Poppins-Regular_0", textAlign: 'right'}}>${value.plush_cost}</Text>
+                                    </View>  
+                                    
+                                    }
+        
+        
+                                        <View style={{display:"flex", flexDirection:"row", justifyContent:'space-between'}}> 
+                                        <Text style={{ width: "50%", fontFamily: "Poppins-Regular_0", color: '#bdbdbd' }}>Beauticainist Name</Text>
+                                                            <Text style={{ marginLeft: "5%", fontFamily: "Poppins-Regular_0", fontSize:15  }}>{value.beautician}</Text>
+                                        </View>
+        
+                                        <Divider style={{backgroundColor:'#bdbdbd', top: 10, width:'95%'}} />
+        
+                            </View>
+        
+                                )
 
-                           <View style={{display:"flex", flexDirection:"row", paddingVertical:"5%", justifyContent:'space-between'}}> 
-                                    <Text style={{fontFamily:"Poppins-Regular_0", color:"#ff8385", fontSize:17}}>{formatDate}</Text>
-                                </View>
+                        }else {
+
+                            return(
+                                <View key={index} style={index === dataLength ? {backgroundColor:'#fff', padding: 10, borderBottomLeftRadius: 20, borderBottomRightRadius: 20} : {backgroundColor:'#fff', padding: 10}}> 
+        
+                                   <View style={{display:"flex", flexDirection:"row", paddingVertical:"5%", justifyContent:'space-between'}}> 
+                                            <Text style={{fontFamily:"Poppins-Regular_0", color:"#ff8385", fontSize:17}}>{formatDate}</Text>
+                                        </View>
+        
+        
+        
+        
+                                        <View style={{ display: "flex", flexDirection: "row" , justifyContent:'space-between'}}>
+                                                            <Text style={{ width: "50%", fontFamily: "Poppins-Regular_0", color: '#bdbdbd' }}>Service Name</Text>
+                                                            <Text style={{ marginLeft: "5%", fontFamily: "Poppins-Regular_0", fontSize:15  }}>{value.service_name}</Text>
+                                            </View>
+        
+        
+                                      
+        
+        
+        {value.s_checked  == 1 ? 
+                                         <View style={{display:"flex", flexDirection:"row"}}> 
+                                            <Text style={{width:"50%", fontFamily:"Poppins-Regular_0", color:'#aaaaaa' }}>Cost</Text>
+                                            <Text style={{width:"50%",  fontFamily:"Poppins-Regular_0", textAlign: 'right'}}>${value.soplush_cost}</Text>
+                                        </View>  
+                                        
+                                    :
+                                    <View style={{display:"flex", flexDirection:"row"}}> 
+                                    <Text style={{width:"50%", fontFamily:"Poppins-Regular_0", color:'#aaaaaa' }}>Cost</Text>
+                                    <Text style={{width:"50%",  fontFamily:"Poppins-Regular_0", textAlign: 'right'}}>${value.plush_cost}</Text>
+                                    </View>  
+                                    
+                                    }
+        
+        
+                                        <View style={{display:"flex", flexDirection:"row", justifyContent:'space-between', paddingVertical: 5}}> 
+                                        <Text style={{ width: "50%", fontFamily: "Poppins-Regular_0", color: '#bdbdbd' }}>Beauticainist Name</Text>
+                                                            <Text style={{ marginLeft: "5%", fontFamily: "Poppins-Regular_0", fontSize:15  }}>{value.beautician}</Text>
+                                        </View>
+        
+                                        <Divider style={{backgroundColor:'#bdbdbd', top: 10, width:'95%'}} />
+        
+                            </View>
+        
+                                )
 
 
 
 
-                                <View style={{ display: "flex", flexDirection: "row" , justifyContent:'space-between'}}>
-                                                    <Text style={{ width: "50%", fontFamily: "Poppins-Regular_0", color: '#bdbdbd' }}>Service Name</Text>
-                                                    <Text style={{ marginLeft: "5%", fontFamily: "Poppins-Regular_0", fontSize:15  }}>{value.service_name}</Text>
-                                    </View>
+                        }
+
+                        
+                    })}
 
 
-                              
 
-                                
+
 {/* 
-                                <View style={{display:"flex", flexDirection:"row"}}> 
-                                    <Text style={{width:"30%", fontFamily:"Poppins-Regular_0", fontSize:20}}>Time</Text>
-                                    <Text style={{marginLeft:"3%", fontFamily:"Poppins-Regular_0", fontSize:20}}>{value.time_slot}</Text>
+
+{this.state.data.map((value, index) => {
+                        var formatDate = `${moment(value.service_date).format('dddd')} - ${ moment(value.service_date).format('DD/MM/YYYY')}`
+                        return(
+                            <View key={index} style={{width:'100%', padding: 20, alignSelf:'center', borderBottomColor:"#bdbdbd", borderBottomWidth:0.2}}>
+                                 <View style={{display:"flex", flexDirection:"row", paddingVertical: 10}}> 
+                                    <Text style={{fontFamily:"Poppins-Regular_0", color:"#ff8385", fontSize:15}}>{formatDate}</Text>
                                 </View>
 
-                                 <View style={{display:"flex", flexDirection:"row"}}> 
-                                    <Text style={{width:"30%", fontFamily:"Poppins-Regular_0", fontSize:20}}>Date</Text>
-                                    <Text style={{marginLeft:"3%", fontFamily:"Poppins-Regular_0", fontSize:20}}>{value.service_date}</Text>
-                                </View> */}
+                                <View style={{display:"flex", flexDirection:"row"}}> 
+                                    <Text style={{width:"50%", fontFamily:"Poppins-Regular_0", color:'#aaaaaa' }}>Service Name</Text>
+                                    <Text style={{width:"50%", fontFamily:"Poppins-Regular_0", textAlign: 'right'}}>{value.service_name}</Text>
+                                </View>
 
-{value.s_checked  == 1 ? 
+                                {value.s_checked  == 1 ? 
                                  <View style={{display:"flex", flexDirection:"row"}}> 
                                     <Text style={{width:"50%", fontFamily:"Poppins-Regular_0", color:'#aaaaaa' }}>Cost</Text>
-                                    <Text style={{width:"50%",  fontFamily:"Poppins-Regular_0", textAlign: 'right'}}>${value.soplush_cost}</Text>
+                                    <Text style={{width:"50%",  fontFamily:"Poppins-Regular_0", textAlign: 'right'}}>${value.service_cost}</Text>
                                 </View>  
                                 
                             :
                             <View style={{display:"flex", flexDirection:"row"}}> 
                             <Text style={{width:"50%", fontFamily:"Poppins-Regular_0", color:'#aaaaaa' }}>Cost</Text>
-                            <Text style={{width:"50%",  fontFamily:"Poppins-Regular_0", textAlign: 'right'}}>${value.plush_cost}</Text>
+                            <Text style={{width:"50%",  fontFamily:"Poppins-Regular_0", textAlign: 'right'}}>${value.so_plush_cost}</Text>
                             </View>  
                             
                             }
 
 
-                                <View style={{display:"flex", flexDirection:"row", justifyContent:'space-between'}}> 
-                                <Text style={{ width: "50%", fontFamily: "Poppins-Regular_0", color: '#bdbdbd' }}>Beauticainist Name</Text>
-                                                    <Text style={{ marginLeft: "5%", fontFamily: "Poppins-Regular_0", fontSize:15  }}>{value.beautician}</Text>
+
+                                 <View style={{display:"flex", flexDirection:"row"}}> 
+                                    <Text style={{width:"50%", fontFamily:"Poppins-Regular_0", color:'#aaaaaa' }}>Beauticianist Name</Text>
+                                    <Text style={{width:"50%", fontFamily:"Poppins-Regular_0", textAlign: 'right'}}>{this.state.beauticianName}</Text>
                                 </View>
 
-                                <Divider style={{backgroundColor:'#bdbdbd', top: 10, width:'95%'}} />
-                                {/* {value.is_reviewed == '0' && 
-                                <TouchableOpacity onPress={() => {
-                                    this.props.navigation.navigate('Feedback', {
-                                        bokingdetails : value
-                                    })
-                                }} style={{alignContent:'center',alignItems:'center', alignSelf:'center'}}>
-                                <Text style={{color:"#fc8b8c", fontSize:15, paddingVertical:5}}>Click Here to Rating</Text> 
-                                </TouchableOpacity>} */}
-
+                                
                     </View>
 
                         )
-                    })}
+                    })} */}
 
     </View>   :
             

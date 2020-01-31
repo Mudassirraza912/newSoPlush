@@ -186,8 +186,8 @@ export default class AddServiceDetails extends Component {
 
 <View style={{ width: "80%", alignContent: "center", alignItems: "center", justifyContent: "center", alignSelf: 'center' }}>
 
-<Item stackedLabel style={{ width: '100%', borderBottomWidth: 1, borderBottomColor: '#bdbdbd' }}>
-    <Label style={{ marginLeft: 3, color: 'gray', fontSize: 12, marginTop: 10 }}>Enter Service</Label>
+<Item  stackedLabel style={{ width: '100%', borderBottomWidth: 1, borderBottomColor: '#bdbdbd' }}>
+    <Label style={{marginRight: '73%',    color: 'gray', fontSize: 12, marginTop: 10 }}>Enter Service</Label>
     <Input value={this.state.email} style={{ color: 'gray', width: '100%', marginBottom: 5 }} onChangeText={(e) => { this.setState({ name: e }) }} placeholder="Enter Service" />
 </Item>
 
@@ -195,9 +195,10 @@ export default class AddServiceDetails extends Component {
 
 
 <Item stackedLabel style={{ width: '100%', borderBottomWidth: 1, borderBottomColor: '#bdbdbd' }}>
-    <Label style={{ marginLeft: 3, color: 'gray', fontSize: 12, marginTop: 10 }}>Enter Cost</Label>
+    <Label style={{ marginRight: '78%', color: 'gray', fontSize: 12, marginTop: 10 }}>Enter Cost</Label>
     <Input value={this.state.email} style={{ color: 'gray', width: '100%', marginBottom: 5 }} onChangeText={(e) => { this.setState({ cost: e }) }} placeholder="Enter Cost" keyboardType="number-pad" />
 </Item>
+
 <View>
     <Picker
         mode="dropdown"

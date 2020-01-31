@@ -3,7 +3,7 @@ import { Text, View, ImageBackground, Dimensions, Image, TouchableOpacity, Scrol
 // import {  } from 'react-native-gesture-handler';
 import { Container, Content,Left, Right, Button } from 'native-base';
 import {Avatar, Header, Icon, Card, ListItem, Divider} from 'react-native-elements'
-import img from '../../../assets/barbie.jpg'
+import img from '../../../assets/notiLogo.png'
 
 
 const {width, height} = Dimensions.get("window")

@@ -502,7 +502,7 @@ export default class BookingReq extends Component {
                                     {this.state.data.map((value, index) => {
                                         var newdate = moment(value.service_date).format('DD-MM-YYYY')
                                         return (
-                                            <View key={index} style={{ width: '90%', padding: 10, alignSelf: 'center' }}>
+                                            <View key={index} style={{ width: '90%', padding: 10, alignSelf: 'center', right: 10 }}>
                                                 <View style={{ display: "flex", flexDirection: "row", width: "100%" }}>
                                                     <Text style={{ width: "30%", fontFamily: "Poppins-Regular_0", fontSize: 17, color: '#aaaaaa' }}>Name</Text>
                                                     <Text style={{ marginLeft: "3%", fontFamily: "Poppins-Regular_0", fontSize: 15, width: '30%' }}>{value.username}</Text>
@@ -538,7 +538,7 @@ export default class BookingReq extends Component {
             <View style={{ alignContent: "center", alignItems: "center", marginTop: "5%", marginBottom: 10, width: '50%',marginRight: 15 }}>
 
 
-                <LinearGradient start={{ x: 0.0, y: 0.25 }} end={{ x: 0.0, y: 1.0 }} colors={['#F9B1B0', '#FD8788', '#FF7173']} style={{ width: "95%", borderRadius: 5 }}>
+                <LinearGradient start={{ x: 0.0, y: 0.25 }} end={{ x: 0.0, y: 1.0 }} colors={['#F9B1B0', '#FD8788', '#FF7173']} style={{ width: "97%", borderRadius: 5 }}>
                     <TouchableOpacity onPress={() => { this.changeStatus('accepted', value, index) }} style={{ justifyContent: "center", alignContent: "center", alignItems: "center", backgroundColor: "none", opacity: 0.7, borderRadius: 5 }} style={{ flexDirection: "column", justifyContent: "center", alignContent: "center", alignItems: "center", backgroundColor: "transparent", opacity: 0.7, borderRadius: 5 }}>
                         <Text style={{ alignSelf: "center", textAlignVertical: "center", color: "#fff", fontFamily: "Poppins-Regular_0", fontSize: 17, paddingVertical: 10, fontWeight: 'bold' }}>
                             ACCEPT

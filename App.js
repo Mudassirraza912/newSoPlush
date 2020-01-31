@@ -33,6 +33,10 @@ import NetInfo from  '@react-native-community/netinfo'
 import Splash from './src/components/Splash/splash' 
 import { GoogleSignin } from '@react-native-community/google-signin'; 
 import 'react-native-gesture-handler';
+
+import PushNotification from 'react-native-push-notification';
+import { PushNotificationIOS } from 'react-native';
+
 const obj = {
   scopes: ['https://www.googleapis.com/auth/drive.readonly'], // what API you want to access on behalf of the user, default is email and profile
   webClientId: '240404485205-d9m1p0jjsu2ncr7l2fa5oqbu5pb7inu1.apps.googleusercontent.com',
@@ -55,6 +59,38 @@ export default class App extends Component {
   }
 
   componentWillMount () {
+
+    PushNotification.configure({
+      senderID: '240404485205',
+
+      onRegister: token => {
+        //process token'
+        console.log("TOKEN TOKEN TOKEN")
+        console.log("token",token)
+      },
+   
+      onNotification: (notification) => {
+        // process the notification
+        console.log("notification notification notification")
+
+        // required on iOS only
+        notification.finish(PushNotificationIOS.FetchResult.NoData);
+      },
+   
+      permissions: {
+        alert: true,
+        badge: true,
+        sound: true
+      },
+   
+      popInitialNotification: true,
+      requestPermissions: true,
+   
+    });
+
+
+
+
     GoogleSignin.configure(obj);
     console.log('GoogleSignin.configure(obj)',GoogleSignin.configure(obj))
   }
@@ -71,6 +107,24 @@ export default class App extends Component {
         ToastAndroid.show("Internet connection seems to be online", ToastAndroid.SHORT)
       }
     })
+
+
+
+    PushNotification.localNotification({
+      autoCancel: true,
+      largeIcon: "ic_launcher",
+      smallIcon: "ic_notification",
+      bigText: "My big text that will be shown when notification is expanded",
+      subText: "This is a subText",
+      color: "#F9B1B0",
+      vibrate: true,
+      vibration: 300,
+      title: "Notification Title",
+      message: "Notification Message",
+      playSound: true,
+      soundName: 'default',
+      // actions: '["Accept", "Reject"]',
+    });
   }
 
   fetchProfileData = (data) => {

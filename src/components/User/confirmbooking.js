@@ -224,6 +224,7 @@ export default class ConfirmBooking extends Component {
                                                                     // value={this.state.value} 
                                                                     value={Number(value.quantity)}
                                                                     // initValue={1}
+                                                                    borderColor="pink"
                                                                     editable={false}
                                                                     minValue={1}
                                                                     containerStyle={{ borderColor: "pink" }}
@@ -236,7 +237,7 @@ export default class ConfirmBooking extends Component {
                                                                     step={1}
                                                                     valueType='real'
                                                                     rounded
-                                                                    inputStyle={{ backgroundColor: "pink" }}
+                                                                    inputStyle={{ backgroundColor: "pink", borderColor:"pink" }}
                                                                     textColor='#000'
                                                                     iconStyle={{ color: '#000' }}
                                                                     rightButtonBackgroundColor='#ffff'

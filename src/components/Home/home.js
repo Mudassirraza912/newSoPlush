@@ -19,25 +19,25 @@ export default class Home extends Component {
 
     componentDidMount = async () => {
         console.log('componentWillMount componentWillMountcomponentWillMount ')
-        try {
-            const value = await AsyncStorage.getItem('User');
-            console.log('value value value', value)
-            if (value !== null) {
-              // We have data!!
-            var convertVal = JSON.parse(value)
-            this.props.screenProps.fetchProfileData(convertVal)
-            if (convertVal.role_id === '2') {
-                this.props.navigation.navigate("UserNavigator")
-            }else {
-                this.props.navigation.navigate("ProNavigator")
-            }
-            console.log('enableButton getting data After JSON in SITEINFO =>',convertVal)
+        // try {
+        //     const value = await AsyncStorage.getItem('User');
+        //     console.log('value value value', value)
+        //     if (value !== null) {
+        //       // We have data!!
+        //     var convertVal = JSON.parse(value)
+        //     this.props.screenProps.fetchProfileData(convertVal)
+        //     if (convertVal.role_id === '2') {
+        //         this.props.navigation.navigate("UserNavigator")
+        //     }else {
+        //         this.props.navigation.navigate("ProNavigator")
+        //     }
+        //     console.log('enableButton getting data After JSON in SITEINFO =>',convertVal)
            
-            }
-          } catch (error) {
-                console.log('Errr getting data =>', error)
+        //     }
+        //   } catch (error) {
+        //         console.log('Errr getting data =>', error)
     
-          }
+        //   }
         // var user = AsyncStorage.getItem('User')
         // console.log("AsyncStorage.getItem('User') AsyncStorage.getItem('User')", user)
     }

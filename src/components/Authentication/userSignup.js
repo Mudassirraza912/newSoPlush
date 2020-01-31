@@ -18,6 +18,7 @@ import lock from '../../../assets/lockopen.png'
 import cake from '../../../assets/cake.png'
 import museum from '../../../assets/museum.png'
 import atmcard from '../../../assets/atm-card.png'
+import photoCamera from '../../../assets/photo-camera.png'
 
 
 const BadgedIcon = withBadge("X")(Avatar)
@@ -450,7 +451,7 @@ export default class UserSignUp extends Component {
                                 </Item>
 
                                 {this.state.profilePic && <View style={{ display: "flex", flexDirection: "row", marginBottom: "3%", marginVertical: '3%', alignSelf: 'flex-start' }}>
-                                    <Avatar onPress={this.openGallery} containerStyle={{ height: 40, width: 40, marginTop: "1%", borderRadius: 10 }} source={camicon} overlayContainerStyle={{ height: 40, width: 40, marginTop: "1%", borderRadius: 5 }} />
+                                    <Avatar onPress={this.openGallery} containerStyle={{ justifyContent:'center',alignItems:'center',height: 40, width: 40, marginTop: "1%", borderRadius: 5, backgroundColor:'#bdbdbd', }} source={photoCamera}  avatarStyle={{height:15, width: 15 }} overlayContainerStyle={{ height: 40, width: 40, marginTop: "30%", marginLeft:'60%', borderRadius: 5, }} />
 
 
                                     <TouchableOpacity style={{ height: 50, width: 50, borderTopLeftRadius: 5,borderBottomLeftRadius: 5, borderBottomRightRadius: 5,  }} onPress={() => {
@@ -476,7 +477,7 @@ export default class UserSignUp extends Component {
 
                                     }}>
                                         <ImageBackground source={this.state.profilePic}  borderTopLeftRadius = {5}  borderBottomRightRadius= {5} borderBottomLeftRadius={5} style={{ height: 40, width: 40, margin: 3, display: "flex", backgroundColor: "lightgray",}}>
-                                            <Text style={{ backgroundColor: "red", borderRadius: 100, color: "#fff", height: 20, width: 20, alignSelf: 'flex-end', textAlign: 'center', position: 'absolute', right: -7, top: -7 }}>X</Text>
+                                            <Text style={{ backgroundColor: "red", borderRadius: 100, color: "#fff", height: 15, width: 15, alignSelf: 'flex-end', textAlign: 'center', position: 'absolute', right: -7, top: -7, fontSize: 10 }}>X</Text>
                                         </ImageBackground>
                                     </TouchableOpacity>
                                 </View>}

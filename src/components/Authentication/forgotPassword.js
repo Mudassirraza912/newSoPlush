@@ -93,8 +93,7 @@ export default class ForgotPassword extends Component {
         if (reg.test(email) === false) {
             this.setState({ loader: true })
             Alert.alert(
-                'Alert',
-                'Are you sure you want to exit?',
+                "Alert","Please Enter Valid Email Address",
                 [
                     {
                         text: 'OK',

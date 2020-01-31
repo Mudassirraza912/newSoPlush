@@ -3,7 +3,7 @@ import { Text, View, ImageBackground, Dimensions, Image, TouchableOpacity, Scrol
 // import {  } from 'react-native-gesture-handler';
 import { Container, Content,Left, Right, Button } from 'native-base';
 import {Avatar, Header, Icon, Card, ListItem, Divider} from 'react-native-elements'
-import img from '../../../assets/barbie.jpg'
+import img from '../../../assets/notiLogo.png'
 
 
 const {width, height} = Dimensions.get("window")
@@ -89,21 +89,21 @@ export default class Notification extends Component {
         } else { mainItem = `${item.data.substring(0, length)}...` }
         return(
         <View style={{backgroundColor:"transparent", width:'100%'}}>
-        <ListItem
+           <ListItem
         containerStyle={{backgroundColor:"transparent", width:"100%"}}
           title={mainItem}
           subtitle={item.time}
-          titleStyle = {{fontFamily:"Poppins-Regular_0", textAlignVertical: "top", fontSize: 15}}
+          titleStyle = {{fontFamily:"Poppins-Regular_0", textAlignVertical: "top", fontSize: 14}}
           subtitleStyle={{color:"red", fontFamily:"Poppins-Regular_0", textAlignVertical: "bottom", marginTop: 8}}
           leftAvatar={{
             source: item.icon &&  item.icon ,
             titleStyle:{fontFamily:"Poppins-Regular_0"},
-            title: item.data[0],
+            // title: item.data[0],
             rounded:false,
             size:'large',
-            containerStyle:{borderRadius: 10, backgroundColor:"transparent"},
-            iconStyle:{borderRadius: 20}, 
-            avatarStyle:{borderRadius: 10, backgroundColor:"transparent"}, 
+            containerStyle:{borderRadius: 10, backgroundColor:"transparent", overflow:'hidden'},
+            iconStyle:{borderRadius: 20, overflow:'hidden'}, 
+            avatarStyle:{borderRadius: 10, backgroundColor:"transparent", overflow:'hidden'}, 
           }}
           
         />

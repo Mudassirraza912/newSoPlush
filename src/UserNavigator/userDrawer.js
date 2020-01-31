@@ -31,7 +31,7 @@ class DrawerMenu extends Component {
     console.log("Drawer DrawerDrawer  Drawer", `https://hnhtechsolutions.com/hassan/soplush/profile_pics/${this.props.screenProps.profileData.profile_pic}`)
     return (
 
-      <View style={{ flex: 1, justifyContent: "center", alignContent: "center", height: '100%', backgroundColor: 'rgba(246, 232, 232, 0.5)' }}>
+      <View style={{ flex: 1, justifyContent: "center", alignContent: "center", height: '100%', backgroundColor: 'rgba(246, 232, 232, 0.5)'}}>
         <Header style={{ height: 100, backgroundColor: '#F6E8E8', paddingTop: 10, alignItems: 'flex-start', justifyContent: 'flex-start' }}>
           <TouchableOpacity onPress={() => {
             this.props.navigation.navigate('UserProfile')
