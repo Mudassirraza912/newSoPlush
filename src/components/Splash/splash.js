@@ -25,7 +25,7 @@ export default class Splash extends Component {
               // We have data!!
             var convertVal = JSON.parse(value)
             this.props.screenProps.fetchProfileData(convertVal)
-            if (convertVal.role_id === '2') {
+            if (convertVal.role_id === '4') {
                 this.props.navigation.navigate("UserNavigator")
             }else {
                 this.props.navigation.navigate("ProNavigator")

@@ -123,9 +123,9 @@ export default class Home extends Component {
                                     <Text style={{ marginTop: "20%", fontFamily: "Poppins-Regular_0", fontSize: 20, paddingVertical:'5%' }}>I am a...</Text>
                                 </View>
 
-                                <View style={{ display: "flex", flexDirection: "row", width: "100%", justifyContent: "space-around", marginTop: "3%", alignSelf:'center'}}>
+                                <View style={{ display: "flex", flexDirection: "row", width: "100%", justifyContent: "space-around", marginTop: "3%", alignContent:'center'}}>
 
-                                    <TouchableOpacity style={{width:"45%"}} onPress={() => { this.props.navigation.navigate("UserLogin") }}>
+                                    <TouchableOpacity style={{width:"55%"}} onPress={() => { this.props.navigation.navigate("UserLogin") }}>
                                         <View style={{ alignContent: "center", alignItems: "center", alignSelf: "center", backgroundColor: "transparent", width: 143, height: 139, borderRadius: 5, borderColor: "#000", borderWidth: 1, justifyContent: "space-evenly" }}>
 
                                             <Image source={require('../../../assets/userIcon.png')} style={{ height: 55, width: 50, marginTop: "10%" }} />

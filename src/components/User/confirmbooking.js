@@ -122,7 +122,8 @@ export default class ConfirmBooking extends Component {
                             if (successData.status === true) {
                                 // console.log("successData.data[0].role_id === 3", successData.data[0].role_id === 3)
                                 this.setState({loader: false})
-                                console.log("successData.data Add BOOKING", successData)
+                                console.log("successData.data Add BOOKING", successData, this.props.navigation.state.params)
+                                this.props.navigation.state.params = {};
                                 Alert.alert("Alert","Booking Send Successfully")
                                 this.props.navigation.navigate('UserHome')
 

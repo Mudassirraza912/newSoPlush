@@ -110,21 +110,21 @@ export default class App extends Component {
 
 
 
-    PushNotification.localNotification({
-      autoCancel: true,
-      largeIcon: "ic_launcher",
-      smallIcon: "ic_notification",
-      bigText: "My big text that will be shown when notification is expanded",
-      subText: "This is a subText",
-      color: "#F9B1B0",
-      vibrate: true,
-      vibration: 300,
-      title: "Notification Title",
-      message: "Notification Message",
-      playSound: true,
-      soundName: 'default',
-      // actions: '["Accept", "Reject"]',
-    });
+  //   PushNotification.localNotification({
+  //     autoCancel: true,
+  //     largeIcon: "ic_launcher",
+  //     smallIcon: "ic_notification",
+  //     bigText: "My big text that will be shown when notification is expanded",
+  //     subText: "This is a subText",
+  //     color: "#F9B1B0",
+  //     vibrate: true,
+  //     vibration: 300,
+  //     title: "Notification Title",
+  //     message: "Notification Message",
+  //     playSound: true,
+  //     soundName: 'default',
+  //     // actions: '["Accept", "Reject"]',
+  //   });
   }
 
   fetchProfileData = (data) => {

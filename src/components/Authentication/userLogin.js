@@ -536,7 +536,7 @@ export default class UserLogin extends Component {
                         if (successData.status === true) {
                             // console.log(" After Status SUCCESS USER", successData.data[0].role_id == 2)
 
-                            if (successData.data[0].role_id == 2) {
+                            if (successData.data[0].role_id == 4) {
                                 console.log(" After ROLE ID SUCCESS USER", this.props)
                                 this.props.screenProps.fetchProfileData(successData.data[0])
                                 // AsyncStorage.setItem('User', JSON.stringify(successData.data[0]))

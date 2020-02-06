@@ -204,7 +204,7 @@ const { width, height } = Dimensions.get("window")
 
 
     render() {
-        console.log("this.state.catrgotiies", this.state.categories)
+        console.log("successData.data Add BOOKING",this.props.navigation.state.params)
         const { items } = this.state
         return (
             <View style={{ flex: 1, height: '100%', width:'100%' , marginTop: -80 }}>

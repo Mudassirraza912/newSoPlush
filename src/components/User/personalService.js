@@ -331,6 +331,8 @@ export default class PersonalService extends Component {
 
             //   Alert.alert("Login successful")
          
+            filterSoplush = null;
+            filterplush = null;
             this.props.navigation.navigate('SelectBeautician', {
             users: successData.data,
             cart: this.state.cart,
