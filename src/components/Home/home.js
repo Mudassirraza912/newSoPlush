@@ -106,7 +106,7 @@ export default class Home extends Component {
             <View style={{ flex: 1, height: '100%', width: '100%', marginTop: -80 }}>
                 <ImageBackground source={require('../../../assets/inner.png')} style={{ height: "100%", width: "100%" }}>
                     <Header
-                        leftComponent={<Icon name="arrow-back" color="#000" onPress={this.handleClose} />}
+                        // leftComponent={<Icon name="arrow-back" color="#000" onPress={this.handleClose} />}
                         containerStyle={{ marginTop: 60, backgroundColor: "#fff" }}
                         placement="left"
                         centerComponent={<Text style={{ alignSelf: 'center', fontSize: 20, fontFamily: "Poppins-Regular_0" }}>HOME</Text>}
@@ -117,13 +117,15 @@ export default class Home extends Component {
 
                             <View style={{ flex: 1, paddingHorizontal: 10, alignItems: 'center', justifyContent: 'center', alignSelf: 'center', width: '100%', borderRadius: 10}}>
 
-                            <ImageBackground source={require('../../../assets/homeBackground.png')} style={{ height: "95%", width: "100%", borderRadius: 10 }}>
+                            <ImageBackground source={require('../../../assets/homeBackground.png')} style={{ height: "90%", width: "100%", borderRadius: 10 }}>
                                 <View style={{ alignSelf: "center", alignContent: "center", alignItems: "center", marginTop: "15%", paddingVertical:10 }}>
                                     <Image source={require('../../../assets/text.png')} />
                                     <Text style={{ marginTop: "20%", fontFamily: "Poppins-Regular_0", fontSize: 20, paddingVertical:'5%' }}>I am a...</Text>
                                 </View>
 
-                                <View style={{ display: "flex", flexDirection: "row", width: "100%", justifyContent: "space-around", marginTop: "3%", alignContent:'center'}}>
+                                {/* <View style={{flex: 1, justifyContent:'center', alignContent:"center"}}> */}
+
+                                <View style={{ display: "flex", flexDirection: "row", width: "100%", justifyContent: "space-around", marginTop: "3%", alignContent:'center', right: 5}}>
 
                                     <TouchableOpacity style={{width:"55%"}} onPress={() => { this.props.navigation.navigate("UserLogin") }}>
                                         <View style={{ alignContent: "center", alignItems: "center", alignSelf: "center", backgroundColor: "transparent", width: 143, height: 139, borderRadius: 5, borderColor: "#000", borderWidth: 1, justifyContent: "space-evenly" }}>
@@ -134,13 +136,14 @@ export default class Home extends Component {
                                         </View>
                                     </TouchableOpacity>
 
-                                    <TouchableOpacity style={{width:"45%"}} onPress={() => { this.props.navigation.navigate("ProLogin") }}>
+                                    <TouchableOpacity style={{width:"45%", right:5}} onPress={() => { this.props.navigation.navigate("ProLogin") }}>
                                         <View style={{ width: "100%", borderRadius: 10 }}>
                                             <Image source={require('../../../assets/Button.png')} />
                                         </View>
                                     </TouchableOpacity>
 
                                 </View>
+                             {/* </View> */}
                             </ImageBackground>
                             </View>
                         </ScrollView>

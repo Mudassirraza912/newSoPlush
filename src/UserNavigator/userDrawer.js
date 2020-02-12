@@ -228,7 +228,7 @@ class DrawerMenu extends Component {
 
             >
               <View style={{ marginLeft: 10, width: 30 }}>
-                <Image source={require('../../assets/info.png')} style={{ height: 20, width: 20 }} />
+                <Image source={require('../../assets/about-us.png')} style={{ height: 20, width: 20 }} />
               </View>
 
               <View style={{ marginLeft: 20 }}>

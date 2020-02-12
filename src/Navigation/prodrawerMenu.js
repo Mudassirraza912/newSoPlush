@@ -301,8 +301,8 @@ class DrawerMenu extends Component {
                 <Image source={require('../../assets/trans.png')} style={{ height: 20, width: 20 }} />
               </View>
 
-              <View style={{ marginLeft: 20 }}>
-                <Text style={styles.menuItemText}> عربي - English </Text>
+              <View style={{ marginLeft: 17 }}>
+                <Text style={styles.menuItemText}>عربي - English </Text>
               </View>
 
 
