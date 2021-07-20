@@ -14,7 +14,7 @@
     "moment": "^2.24.0",
     "native-base": "^2.13.5",
     "react": "16.8.6",
-    "react-native": "0.60.5",
+    "react-native": "0.62.3",
     "react-native-app-intro-slider": "^3.0.0",
     "react-native-app-walkthrough": "^1.0.1",
     "react-native-calendar": "^0.13.1",
